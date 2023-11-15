@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Style the dropdown button */
+        .dropdown-btn {
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            background-color: #3498db;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+            
+        }
+
+        /* Style the dropdown content (hidden by default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 5px;
+        }
+
+        /* Style the dropdown links */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Change color on hover */
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="dropdown">
+    <button class="dropdown-btn">Muscle Groups</button>
+    <div class="dropdown-content">
+        <a href="back.php">Back</a>
+        <a href="chest.php">Chest</a>
+        <a href="leg.php">Leg</a>
+        <a href="shoulder.php">Shoulder</a>
+    </div>
+</div>
+</div>
+<a class="btn btn-outline-primary" href="admin_pan.php">Back to Admins</a>
+</div>
+
+</body>
+</html>

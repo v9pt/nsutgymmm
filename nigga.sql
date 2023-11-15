@@ -1,0 +1,189 @@
+CREATE TABLE IF NOT EXISTS Student (
+    Roll_Number VARCHAR(50) PRIMARY KEY,
+    First_Name VARCHAR(50),
+    Last_Name VARCHAR(50),
+    Student_MONO VARCHAR(50),
+    Student_Year INT,
+    Student_Branch VARCHAR(50),
+    Section INT,
+    HorDS VARCHAR(5),
+    Check_in TIME NOT NULL,
+    Check_out TIME
+);
+
+CREATE TABLE IF NOT EXISTS Inventory (
+    Equipment_id INT PRIMARY KEY,
+    Equipment_name VARCHAR(50),
+    Equipment_Condition VARCHAR(50),
+    TypeofEquipment VARCHAR(50),
+    Manufacturer VARCHAR(50)
+);
+
+
+CREATE TABLE IF NOT EXISTS MuscleGroup (
+    Equipment_name VARCHAR(50),
+    Muscle_Name VARCHAR(50)
+);
+
+
+ CREATE TABLE IF NOT EXISTS Employee (
+    Employee_id VARCHAR(10) PRIMARY KEY,
+    Employee_Name VARCHAR(50),
+    Employee_MONO VARCHAR(50),
+    Employee_email VARCHAR(50),
+    Position VARCHAR(50),
+    Time_Slot VARCHAR(50)
+);
+
+
+
+CREATE TABLE IF NOT EXISTS TimeTable (
+    Day VARCHAR(50),
+    Time_Slot VARCHAR(50),
+    Subject VARCHAR(50),
+    Student_Branch VARCHAR(50),
+    Section INT
+);
+
+
+CREATE TABLE IF NOT EXISTS USER (
+    TypeofUser VARCHAR(50),
+    Login_Id VARCHAR(50),
+    Password INT
+);
+
+
+
+INSERT INTO MuscleGroup VALUES
+('LAT PULLDOWN','BACK'),
+('SEATED CABLE ROW','BACK'),
+('SHOULDER PRESS','SHOULDER'),
+('CHEST PRESS','CHEST'),
+('CHEST FLY','CHEST'),
+('FLAT BENCH','CHEST'),
+('INCLINE BENCH','CHEST'),
+('LEG EXTENTION','LEG'),
+('HAMSTRING CURL','LEG'),
+('SQUAT RACK','LEG'),
+('SMITH-MACHINE','LEG');
+
+
+ INSERT INTO Inventory VALUES
+(1001,'LEG EXTENTION','WORKING','GYM','FLEXNEST'),
+(1002,'SEATED CABLE ROW','WORKING','GYM','MS'),
+(1003,'SHOULDER PRESS','WORKING','GYM','FITNESS WORLD'),
+(1004,'CHEST PRESS','WORKING','GYM','HEALTHLINE'),
+(1005,'LAT PULLDOWN','WORKING','GYM','MS'),
+(1006,'CHEST FLY','NOT WORKING','GYM','HEALTHLINE'),
+(1007,'HAMSTRING CURL','WORKING','GYM','FLEXNEST'),
+(1008,'HAMSTRING CURL','NOT WORKING','GYM','FLEXNEST'),
+(1009,'INCLINE BENCH','WORKING','GYM','HEALHTLINE'),
+(1010,'FLAT BENCH','WORKING','GYM','HEALTHLINE'),
+(1011,'LAT PULLDOWN','NOT WORKING','GYM','MS'),
+(1012,'SQUAT RACK','WORKING','GYM','MS'),
+(1013,'5KG DUMBELL','WORKING','GYM','BULLROCK'),
+(1014,'10KG DUMBELL','WORKING','GYM','BULLROCK'),
+(1015,'15KG DUMBELL','WORKING','GYM','BULLROCK'),
+(1016,'20KG DUMBELL','WORKING','GYM','BULLROCK'),
+(1017,'CARAMBOARD','WORKING','GAMES','VOLATILITY'),
+(1018,'CARAMBOARD','NOT WORKING','GAMES','VOLATILITY'),
+(1019,'CARAMBOARD','WORKING','GAMES','VOLATILITY'),
+(1020,'CHESS','WORKING','GAMES','MTM WOOD'),
+(1021,'CHESS','WORKING','GAMES','MTM WOOD'),
+(1022,'CHESS','WORKING','GAMES','MTM WOOD');
+
+
+
+INSERT INTO Employee VALUES
+('EMP1010','Suresh Chandra','9910772620','schandra@staff.nsut.ac.in','STAFF','08:00-11:00'),
+('EMP2010','Madan Lal','9826888064','mlal@security.nsut.ac.in','GUARD','11:00-01:00'),
+('EMP1020','Hari Kishor','9972233599','hkishor@staff.nsut.ac.in','STAFF','03:00-05:00'),
+('EMP2020','Raghu Kumar','8810799095','rkumar@security.nsut.ac.in','GUARD','05:00-08:00')
+
+
+INSERT INTO EquipmentUsed VALUES
+('2022UCS1505',1010),
+('2022UCS1505',1009),
+('2022UCA1827',1003),
+('2022UCA1827',1004),
+('2022UCA1827',1006),
+('2022UCA1849',1005),
+('2022UCA1849',1004),
+('2022UCA1843',1005),
+('2022UCA1843',1002),
+('2022UCS1600',1012),
+('2022UCS1600',1001),
+('2022UCS1600',1007),
+('2022UCA1886',1020),
+('2022UCS1574',1012),
+('2022UCS1574',1001),
+('2022UCS1562',1017),
+('2022UCA1850',1018),
+('2022UCA1915',1021),
+('2022UCS1603',1010),
+('2022UCS1603',1009),
+('2022UCS1596',1005),
+('2022UCS1596',1002),
+('2022UCS1596',1003),
+('2022UCS1580',1012),
+('2022UCS1580',1001),
+('2022UCS1580',1007),
+('2022UCS1510',1004),
+('2022UCS1510',1010),
+('2022UCS1573',1003);
+
+
+
+
+INSERT INTO TimeTable VALUES
+('Monday','08:00-09:00','Web Technology','CSAI',1),
+('Monday','09:00-10:00','MPMC','CSAI',1),
+('Monday','10:00-12:00','CAO TUT','CSAI',1),
+('Monday','12:00-01:00','DAA','CSAI',1),
+('Monday','01:00-02:00','DBMS','CSAI',1),
+('Monday','02:00-03:00',NULL,'CSAI',1),
+('Monday','03:00-04:00','CAO','CSAI',1),
+('Monday','04:00-06:00',NULL,'CSAI',1),
+('Monday','08:00-09:00','Web Technology','CSAI',2),
+('Monday','09:00-10:00','DAA','CSAI',2),
+('Monday','10:00-12:00','CAO TUT','CSAI',2),
+('Monday','12:00-01:00','MPMC','CSAI',2),
+('Monday','01:00-02:00','DBMS','CSAI',2),
+('Monday','02:00-03:00',NULL,'CSAI',2),
+('Monday','03:00-04:00','CAO','CSAI',2),
+('Monday','04:00-06:00',NULL,'CSAI',2),
+('Monday','08:00-09:00','Web Technology','CSE',1),
+('Monday','09:00-10:00','MPMC','CSE ',1),
+('Monday','10:00-12:00','DBMS LAB','CSE ',1),
+('Monday','12:00-01:00','DAA','CSE ',1),
+('Monday','01:00-02:00','CAO','CSE ',1),
+('Monday','02:00-03:00',NULL,'CSE ',1),
+('Monday','03:00-04:00','DBMS','CSE ',1),
+('Monday','04:00-06:00',NULL,'CSE ',1),
+('Monday','08:00-09:00','Web Technology','CSE',2),
+('Monday','09:00-10:00','MPMC','CSE ',2),
+('Monday','10:00-12:00','DBMS LAB','CSE ',2),
+('Monday','12:00-01:00','DAA','CSE ',2),
+('Monday','01:00-02:00','CAO','CSE ',2),
+('Monday','02:00-03:00',NULL,'CSE ',2),
+('Monday','03:00-04:00','DBMS','CSE ',2),
+('Monday','04:00-06:00',NULL,'CSE',2);
+
+
+
+INSERT INTO Student VALUES
+('2022UCS1505','Shobit','Malhotra','9737856729',2,'CSE',1,'H','09:00:00','10:00:00'),
+('2022UCA1827','Arnav','Chandwani','8816249978',2,'CSAI',1,'DS','09:30:00','10:40:00'),
+('2022UCA1849','Chaitanya','Yadav','9178563321',2,'CSAI',1,'H','10:00:00','11:00:00'),
+('2022UCA1843','Mitansh','Sharma','9343229384',2,'CSAI',1,'H','10:00:00','11:00:00'),
+('2022UCS1600','Hrishabh','Thakur','9611520034',2,'CSE',2,'H','11:00:00','11:45:00'),
+('2022UCA1886','Meenal','Garg','8002783309',2,'CSAI',2,'DS','12:00:00','01:00:00'),
+('2022UCS1574','Bhavya','Tiwari','8826777864',2,'CSE',1,'H','12:30:00','01:00:00'),
+('2022UCS1562','Shreya','Kohli','9102394599',2,'CSE',1,'DS','03:00:00','04:45:00'),
+('2022UCA1850','Tanmay','Pawar','9213494677',2,'CSAI',1,'H','03:00:00','04:00:00'),
+('2022UCA1915','Samarth','Garg','9903405959',2,'CSAI',2,'H','03:00:00','03:30:00'),
+('2022UCS1603','Shiven','Jindal','7840594759',2,'CSE',2,'H','04:00:00','04:45:00'),
+('2022UCS1596','Tanmay','Jain','8853083576',2,'CSE',2,'DS','04:00:00','05:00:00'),
+('2022UCS1580','Piyush','Lahori','8130072590',2,'CSE',1,'H','05:00:00','06:00:00'),
+('2022UCS1510','Huzaifa','Mulla','9289588773',2,'CSE',1,'DS','05:30:00','06:30:00'),
+('2022UCS1573','Arpit','Kamath','7356655506',2,'CSE',1,'DS','07:00:00','07:45:00');
